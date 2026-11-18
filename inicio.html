@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <meta
+      content="FracDeciMath: aprende fracciones y decimales con lecciones visuales, práctica guiada y un laboratorio interactivo."
+      name="description"
+    />
+    <meta content="#10152b" name="theme-color" />
+    <title>FracDeciMath - Lab Virtual</title>
+    <link rel="stylesheet" href="css/inicio.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/layouts.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="inicio">
+    <div data-layout="header"></div>
+    <main class="pagina-inicio">
+      <section class="hero">
+        <div class="ambient ambient-one" aria-hidden="true"></div>
+        <div class="ambient ambient-two" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="hero-eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Aula digital de matemáticas · Secundaria
+            </span>
+            <h1>
+              Entiende las
+              <span class="highlight-primary">fracciones</span>.
+              Domina los <span class="highlight-secondary">decimales</span>.
+            </h1>
+
+            <p class="hero-description">
+              Explicaciones visuales y ejercicios paso a paso para aprender
+              matemáticas con confianza.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="#modulos"
+              >
+                <span>Comenzar Lección Guiada</span>
+                <span class="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M15 16l4 -4" />
+                    <path d="M15 8l4 4" />
+                  </svg>
+                </span>
+              </a>
+              <a
+                class="button button-outline"
+                href="#modulos"
+              >
+                <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.4-5.5 9.5-5.5 9.5 5.5 9.5 5.5-3.4 5.5-9.5 5.5S2.5 12 2.5 12Z" />
+                  <circle cx="12" cy="12" r="2.5" />
+                </svg>
+                <span>Ver recursos visuales</span>
+              </a>
+            </div>
+            <div class="trust-items" aria-label="Ventajas de FracDeciMath">
+              <div>
+                <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="m8 12 2.5 2.5L16 9" />
+                </svg>
+                Sin registros ni anuncios
+              </div>
+              <div>
+                <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m3 9 9-4 9 4-9 4-9-4Z" />
+                  <path d="M7 11v4c2.8 2.3 7.2 2.3 10 0v-4M21 9v6" />
+                </svg>
+                Contenido alineado al currículo
+              </div>
+            </div>
+          </div>
+
+          <div class="visual-showcase" aria-label="Recursos visuales para aprender matemáticas">
+            <div class="visual-orbit" aria-hidden="true">
+              <span class="orbit-ring orbit-ring-one"></span>
+              <span class="orbit-ring orbit-ring-two"></span>
+              <span class="orbit-dot orbit-dot-one"></span>
+              <span class="orbit-dot orbit-dot-two"></span>
+              <span class="orbit-label orbit-label-top">parte</span>
+              <span class="orbit-label orbit-label-bottom">todo</span>
+              <svg class="math-illustration fraction-illustration" viewBox="0 0 260 210" role="img" aria-label="Tres cuartos representados visualmente">
+                <circle class="fraction-base" cx="130" cy="105" r="72" />
+                <path class="fraction-piece fraction-piece-one" d="M130 105 L130 33 A72 72 0 0 1 202 105 Z" />
+                <path class="fraction-piece fraction-piece-two" d="M130 105 L202 105 A72 72 0 0 1 130 177 Z" />
+                <path class="fraction-piece fraction-piece-three" d="M130 105 L130 177 A72 72 0 0 1 58 105 Z" />
+                <path class="fraction-divider" d="M130 33 V177 M58 105 H202" />
+                <text x="130" y="199" text-anchor="middle">3 de 4 partes</text>
+              </svg>
+              <div class="equation-card equation-card-main">
+                <span>fracción</span>
+                <strong>3/4</strong>
+              </div>
+              <div class="equation-card equation-card-result">
+                <span>decimal</span>
+                <strong>0.75</strong>
+              </div>
+              <div class="symbol-card symbol-plus">+</div>
+              <div class="symbol-card symbol-equals">=</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="stats-section" aria-label="Características de DeciLab">
+        <div class="container stats-grid">
+          <article class="stat-card">
+            <div class="stat-icon icon-blue">
+              <span class="stat-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-math-symbols"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 12l18 0" />
+                  <path d="M12 3l0 18" />
+                  <path d="M16.5 4.5l3 3" />
+                  <path d="M19.5 4.5l-3 3" />
+                  <path d="M6 4l0 4" />
+                  <path d="M4 6l4 0" />
+                  <path d="M18 16l.01 0" />
+                  <path d="M18 20l.01 0" />
+                  <path d="M4 18l4 0" />
+                </svg>
+              </span>
+            </div>
+            <div><strong>+120</strong><span>Ejercicios Activos</span></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon icon-teal">
+              <span class="stat-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-book"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                  <path d="M3 6l0 13" />
+                  <path d="M12 6l0 13" />
+                  <path d="M21 6l0 13" />
+                </svg>
+              </span>
+            </div>
+            <div><strong>5 grados</strong><span>Secundaria</span></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon icon-purple">
+              <span class="stat-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-play"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M9 9.003a1 1 0 0 1 1.517 -.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1 -1.517 -.86v-5.993"
+                  />
+                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                </svg>
+              </span>
+            </div>
+            <div>
+              <strong>Visual &amp; Video</strong
+              ><span>Soluciones paso a paso</span>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon icon-neutral">
+              <span class="stat-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-coin-off"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M14.8 9a2 2 0 0 0 -1.8 -1h-1m-2.82 1.171a2 2 0 0 0 1.82 2.829h1m2.824 2.822a2 2 0 0 1 -1.824 1.178h-2a2 2 0 0 1 -1.8 -1"
+                  />
+                  <path
+                    d="M20.042 16.045a9 9 0 0 0 -12.087 -12.087m-2.318 1.677a9 9 0 1 0 12.725 12.73"
+                  />
+                  <path d="M12 6v2m0 8v2" />
+                  <path d="M3 3l18 18" />
+                </svg>
+              </span>
+            </div>
+            <div><strong>CNEB</strong><span>Matemática · Perú</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="modulos" id="modulos">
+        <div class="contenedor-modulos">
+          <div class="cabecera-modulos">
+            <div>
+              <span class="etiqueta-seccion"
+                >Itinerario Curricular Completo</span
+              >
+              <h2 class="titulo-seccion">Módulos Temáticos de Aprendizaje</h2>
+            </div>
+            <p class="descripcion-seccion">
+              Estructurados para avanzar con solidez pedagógica desde la
+              intuición gráfica hasta el rigor algebraico formal.
+            </p>
+          </div>
+
+          <div class="rejilla-modulos">
+            <div class="tarjeta-modulo">
+              <div class="contenido-modulo">
+                <div class="parte-superior-modulo">
+                  <span class="nivel-modulo nivel-modulo-primario"
+                    >1.º y 2.º secundaria</span
+                  >
+                  <svg class="icono-modulo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3" /></svg>
+                </div>
+                <div class="caja-icono-modulo">
+                  <svg class="module-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10l-3-3M17 17H7l3 3" /></svg>
+                </div>
+                <h3 class="titulo-modulo">De Fracción a Decimal y viceversa</h3>
+                <p class="texto-modulo">
+                  Conversión directa por división, identificación de decimales
+                  exactos, periódicos puros y mixtos mediante la fracción
+                  generatriz.
+                </p>
+              </div>
+              <div class="pie-modulo">
+                <span class="contador-modulo">18 Ejercicios</span>
+                <a href="lecciones-teoricas.html" class="enlace-modulo"
+                  >Explorar
+                  <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></a
+                >
+              </div>
+            </div>
+
+            <div class="tarjeta-modulo">
+              <div class="contenido-modulo">
+                <div class="parte-superior-modulo">
+                  <span class="nivel-modulo nivel-modulo-secundario"
+                    >2.º y 3.º secundaria</span
+                  >
+                  <svg class="icono-modulo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 8v8M8 12h8" /></svg>
+                </div>
+                <div class="caja-icono-modulo">
+                  <svg class="module-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 16h14M12 5v14" /></svg>
+                </div>
+                <h3 class="titulo-modulo">Suma y Resta con Denominadores</h3>
+                <p class="texto-modulo">
+                  Comprensión del mínimo común múltiplo (m.c.m.), alineación
+                  posicional de la coma decimal y estrategias de cálculo mental
+                  rápido.
+                </p>
+              </div>
+              <div class="pie-modulo">
+                <span class="contador-modulo">24 Ejercicios</span>
+                <a
+                  href="laboratorio-interactivo.html"
+                  class="enlace-modulo enlace-modulo-secundario"
+                  >Explorar
+                  <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></a
+                >
+              </div>
+            </div>
+
+            <div class="tarjeta-modulo">
+              <div class="contenido-modulo">
+                <div class="parte-superior-modulo">
+                  <span class="nivel-modulo nivel-modulo-terciario"
+                    >3.º a 5.º secundaria</span
+                  >
+                  <svg class="icono-modulo" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17" /></svg>
+                </div>
+                <div class="caja-icono-modulo">
+                  <svg class="module-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v3M16 5h3v3M8 19H5v-3M19 16v3h-3" /></svg>
+                </div>
+                <h3 class="titulo-modulo">
+                  Multiplicación y División Combinada
+                </h3>
+                <p class="texto-modulo">
+                  Regla de los signos, simplificación cruzada antes de operar,
+                  división entre decimales y jerarquía de operaciones
+                  combinadas.
+                </p>
+              </div>
+              <div class="pie-modulo">
+                <span class="contador-modulo">28 Ejercicios</span>
+                <a
+                  href="evaluacion.html"
+                  class="enlace-modulo enlace-modulo-terciario"
+                  >Explorar
+                  <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></a
+                >
+              </div>
+            </div>
+
+            <div class="tarjeta-modulo">
+              <div class="contenido-modulo">
+                <div class="parte-superior-modulo">
+                  <span class="nivel-modulo nivel-modulo-neutral"
+                    >Todos los Niveles</span
+                  >
+                  <svg class="icono-modulo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M4 12h16M12 4c2.2 2.2 3.2 5 3.2 8s-1 5.8-3.2 8c-2.2-2.2-3.2-5-3.2-8s1-5.8 3.2-8Z" /></svg>
+                </div>
+                <div class="caja-icono-modulo">
+                  <svg class="module-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v9h16v-9M3 10l2-5h14l2 5M8 19v-5h8v5" /></svg>
+                </div>
+                <h3 class="titulo-modulo">
+                  Problemas Prácticos del Mundo Real
+                </h3>
+                <p class="texto-modulo">
+                  Aplicaciones contextualizadas: recetas de cocina, descuentos
+                  de rebajas, distancias de mapas y escalas topográficas.
+                </p>
+              </div>
+              <div class="pie-modulo">
+                <span class="contador-modulo">32 Casos Reales</span>
+                <a href="contacto-tutoria.html" class="enlace-modulo"
+                  >Explorar
+                  <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ruta-aprendizaje">
+        <div class="contenedor-ruta">
+          <div class="cabecera-ruta">
+            <span class="etiqueta-seccion etiqueta-seccion-secundaria"
+              >Flujo de Asimilación Progresiva</span
+            >
+            <h2 class="titulo-seccion">Ruta de Aprendizaje FracDeciMath</h2>
+            <p class="descripcion-seccion">
+              Diseñado para que ningún alumno se quede atrás: desde el concepto
+              hasta la maestría total.
+            </p>
+          </div>
+          <div class="rejilla-ruta">
+            <div class="tarjeta-paso">
+              <div class="numero-paso numero-paso-primario">1</div>
+              <span class="etiqueta-paso etiqueta-paso-primario"
+                >Paso 1 · Fundamento</span
+              >
+              <h3 class="titulo-paso">Mira la idea</h3>
+              <p class="texto-paso">
+                Visualiza por qué el numerador y el denominador interactúan como
+                una proporción y un reparto concreto.
+              </p>
+              <div class="pie-paso">
+                <svg class="route-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-5.5 9.5-5.5 9.5 5.5 9.5 5.5-3.4 5.5-9.5 5.5S2.5 12 2.5 12Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                <span>Animaciones táctiles</span>
+              </div>
+            </div>
+            <div class="tarjeta-paso">
+              <div class="numero-paso numero-paso-secundario">2</div>
+              <span class="etiqueta-paso etiqueta-paso-secundario"
+                >Paso 2 · Acompañamiento</span
+              >
+              <h3 class="titulo-paso">Práctica Guiada</h3>
+              <p class="texto-paso">
+                Resuelve paso a paso con pistas contextuales automáticas si
+                cometes un fallo en la simplificación o en la coma.
+              </p>
+              <div class="pie-paso">
+                <svg class="route-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13a7 7 0 0 1 14 0v3a2 2 0 0 1-2 2h-1v-5h3M5 13v5H4a2 2 0 0 1-2-2v-3h3Z" /><path d="M9 19h6" /></svg>
+                <span>Asistente inteligente</span>
+              </div>
+            </div>
+            <div class="tarjeta-paso">
+              <div class="numero-paso numero-paso-terciario">3</div>
+              <span class="etiqueta-paso etiqueta-paso-terciario"
+                >Paso 3 · Destreza</span
+              >
+              <h3 class="titulo-paso">Desafío Contrarreloj</h3>
+              <p class="texto-paso">
+                Agiliza tu velocidad mental con series de 10 ejercicios de
+                cálculo directo sin calculadora.
+              </p>
+              <div class="pie-paso">
+                <svg class="route-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7" /><path d="M12 9v4l2.5 1.5M9 3h6M12 3v3" /></svg>
+                <span>Rachas y puntos</span>
+              </div>
+            </div>
+            <div class="tarjeta-paso">
+              <div class="numero-paso numero-paso-exito">4</div>
+              <span class="etiqueta-paso etiqueta-paso-exito"
+                >Paso 4 · Logro</span
+              >
+              <h3 class="titulo-paso">Certificación del Módulo</h3>
+              <p class="texto-paso">
+                Demuestra tu dominio frente a una prueba de síntesis y
+                desbloquea el informe imprimible para tu profesor.
+              </p>
+              <div class="pie-paso">
+                <svg class="route-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.2 4.5 5 .7-3.6 3.5.8 5-4.4-2.4-4.4 2.4.8-5-3.6-3.5 5-.7L12 3Z" /><path d="M8 17v4l4-2 4 2v-4" /></svg>
+                <span>Insignia oficial</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonio">
+        <div class="contenedor-testimonio">
+          <div class="tarjeta-testimonio">
+            <div class="testimonio-izquierda">
+              <img
+                alt="Julio el Profe, divulgador de matemáticas"
+                class="imagen-testimonio"
+                src="imagenes/imagen03.png"
+                loading="lazy"
+              />
+              <div class="autor-testimonio">
+                <span class="nombre-autor">Julio el Profe</span>
+                <span class="rol-autor">Docente y divulgador de matemáticas</span>
+              </div>
+            </div>
+            <div class="testimonio-derecha">
+              <span class="testimonio-kicker">Una experiencia que se entiende</span>
+              <div class="estrellas-testimonio">
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg>
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg>
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg>
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg>
+                <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg>
+              </div>
+              <blockquote class="cita-testimonio">
+                “La mejor manera de entender los decimales es verlos nacer de
+                una fracción tangible. Mis estudiantes de secundaria superaron el
+                bloqueo de la división gracias a los modelos interactivos de
+                FracDeciMath.”
+              </blockquote>
+              <div class="destacado-testimonio">
+                <span class="titulo-destacado"
+                  >Lo que cambia cuando lo puedes visualizar</span
+                >
+                <p class="texto-destacado">
+                  “Mis alumnos dejaron de adivinar qué hacer. Ahora pueden
+                  explicar cada paso y comprobar si su resultado tiene sentido.”
+                </p>
+              </div>
+              <div class="testimonio-resultados" aria-label="Resultados destacados">
+                <div><strong>68%</strong><span>menos bloqueo</span></div>
+                <div><strong>34%</strong><span>más claridad</span></div>
+                <div><strong>45+</strong><span>aulas que lo usan</span></div>
+              </div>
+              <div class="enlace-testimonio">
+                <a href="#">
+                  <span>Conoce el método visual</span>
+                  <svg class="inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner-llamada">
+        <div class="cta-equation" aria-hidden="true">
+          <span>fracción</span>
+          <strong>3/4</strong>
+          <b>=</b>
+          <span>decimal</span>
+          <strong>0.75</strong>
+        </div>
+        <div class="tarjeta-llamada">
+          <div class="llamada-izquierda">
+            <div class="tag">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-download"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                  <path d="M7 11l5 5l5 -5" />
+                  <path d="M12 4l0 12" />
+                </svg>
+              </span>
+              <span>Tu siguiente reto está aquí</span>
+            </div>
+            <h2>Tu próximo acierto empieza con un paso.</h2>
+            <p class="">
+              Elige una lección, practica a tu ritmo y convierte la confusión
+              en una respuesta que puedes explicar.
+            </p>
+          </div>
+          <div class="llamada-derecha">
+            <button type="button" class="boton boton-blanco">
+              <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16" /></svg>
+              <span>Empezar una lección</span>
+            </button>
+            <a href="contacto-tutoria.html" class="boton boton-acento">
+              <span>Probar un reto rápido</span>
+              <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-layout="footer"></div>
+
+    <script src="js/layout.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Retos y evaluación | FracDeciMath</title>
+    <link rel="stylesheet" href="css/evaluacion.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body data-page="evaluacion">
+    <div data-layout="header"></div>
+
+    <main class="evaluacion">
+        <header class="evaluacion-hero">
+            <div>
+                <p class="eyebrow">RETO · CNEB · SECUNDARIA</p>
+                <h1>Demuestra lo que sabes</h1>
+                <p class="hero-copy">Resuelve cada situación con calma. Puedes volver a una pregunta antes de enviar.</p>
+            </div>
+            <div class="estado-evaluacion">
+                <span class="estado-punto"></span>
+                <strong>Evaluación activa</strong>
+                <span>6:08 min</span>
+            </div>
+        </header>
+
+        <div class="evaluacion-grid">
+            <section class="pregunta-examen" aria-labelledby="pregunta-titulo">
+                <div class="pregunta-meta">
+                    <span id="pregunta-contador">Pregunta 4 de 10</span>
+                    <span class="competencia">Resuelve problemas de cantidad</span>
+                </div>
+                <div class="progreso-barra" aria-label="40% completado">
+                    <span></span>
+                </div>
+
+                <div class="pregunta-contenido">
+                    <p class="tipo-pregunta">Problema aplicado</p>
+                    <h2 id="pregunta-titulo">¿Qué fracción del depósito queda finalmente llena?</h2>
+                    <div class="enunciado" id="enunciado">
+                        <p>Un depósito contiene <strong>3/5</strong> de su capacidad.</p>
+                        <p>Se extrae <strong>0.25</strong> del volumen total y después se vierten 150 litros, equivalentes a <strong>1/10</strong> de la capacidad.</p>
+                    </div>
+                </div>
+
+                <form class="formulario-respuestas">
+                    <fieldset>
+                        <legend>Elige una respuesta</legend>
+                        <label class="opcion" for="opcionA">
+                            <input type="radio" id="opcionA" name="respuesta" value="A">
+                            <span class="opcion-letra">A</span>
+                            <span>9/20 de la capacidad</span>
+                        </label>
+                        <label class="opcion" for="opcionB">
+                            <input type="radio" id="opcionB" name="respuesta" value="B">
+                            <span class="opcion-letra">B</span>
+                            <span>7/20 de la capacidad</span>
+                        </label>
+                        <label class="opcion" for="opcionC">
+                            <input type="radio" id="opcionC" name="respuesta" value="C">
+                            <span class="opcion-letra">C</span>
+                            <span>1/2 de la capacidad</span>
+                        </label>
+                        <label class="opcion" for="opcionD">
+                            <input type="radio" id="opcionD" name="respuesta" value="D">
+                            <span class="opcion-letra">D</span>
+                            <span>3/10 de la capacidad</span>
+                        </label>
+                    </fieldset>
+
+                    <details class="pista">
+                        <summary>Necesito una pista</summary>
+                        <p>Convierte 0.25 a fracción y usa un denominador común.</p>
+                    </details>
+
+                    <label class="notas-label" for="notas">Mis operaciones <span>opcional</span></label>
+                    <textarea id="notas" name="notas" rows="4" placeholder="Escribe aquí tus cálculos..."></textarea>
+
+                    <div class="acciones">
+                        <button class="boton-secundario" id="anterior" type="button">Anterior</button>
+                        <button class="boton-principal" id="siguiente" type="button">Guardar y continuar <span>→</span></button>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="panel-lateral">
+                <section class="mapa-cuestionario">
+                    <div class="panel-titulo">
+                        <h2>Tu progreso</h2>
+                        <strong>4/10</strong>
+                    </div>
+                    <div class="preguntas">
+                        <button class="hecha" type="button" data-question="1">1</button>
+                        <button class="hecha" type="button" data-question="2">2</button>
+                        <button class="hecha" type="button" data-question="3">3</button>
+                        <button class="actual" type="button" data-question="4" aria-current="step">4</button>
+                        <button type="button" data-question="5">5</button>
+                        <button type="button" data-question="6">6</button>
+                        <button type="button" data-question="7">7</button>
+                        <button type="button" data-question="8">8</button>
+                        <button type="button" data-question="9">9</button>
+                        <button type="button" data-question="10">10</button>
+                    </div>
+                    <p class="leyenda"><span class="hecha"></span>Respondida <span class="actual"></span>Actual</p>
+                </section>
+
+                <section class="recordatorio-operativo">
+                    <p class="eyebrow">RECUERDA</p>
+                    <h2>Convierte antes de operar</h2>
+                    <p>0.25 = 1/4. Luego busca un denominador común.</p>
+                </section>
+
+                <section class="racha-aciertos">
+                    <span class="racha-icono">✦</span>
+                    <div>
+                        <strong>Racha de 3 aciertos</strong>
+                        <p>Vas muy bien. Sigue concentrado.</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+        <section class="rendimiento">
+            <div>
+                <p class="eyebrow">TU AVANCE</p>
+                <h2>Lo que ya dominas</h2>
+                <p>Revisa tus fortalezas para saber qué practicar después.</p>
+            </div>
+            <div class="dominios">
+                <div><span>Convertir decimales</span><strong>95%</strong><i><b style="width:95%"></b></i></div>
+                <div><span>Sumar y restar</span><strong>85%</strong><i><b style="width:85%"></b></i></div>
+                <div><span>Problemas aplicados</span><strong>70%</strong><i><b style="width:70%"></b></i></div>
+            </div>
+        </section>
+    </main>
+
+    <div data-layout="footer"></div>
+    <script src="js/evaluacion.js"></script>
+    <script src="js/layout.js"></script>
+</body>
+</html>
