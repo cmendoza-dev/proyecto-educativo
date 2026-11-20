@@ -48,6 +48,7 @@ let currentNum = 3;
 
         ["kpiDecimal", "kpiPercentage", "kpiReduced", "kpiType"].forEach((id) => {
           const element = $(id);
+          if (!element) return;
           element.classList.remove("is-updated");
           void element.offsetWidth;
           element.classList.add("is-updated");
@@ -67,20 +68,25 @@ let currentNum = 3;
             : decimalValue.toFixed(2));
 
         // Tipo de fracción
+        const kpiType = $("kpiType");
+        const kpiComplement = $("kpiComplement");
         if (num < den) {
           $("labelFractionState").innerText = "Fracción Propia (< 1)";
-          $("kpiType").innerText = "Propia (< 1)";
-          $("kpiComplement").innerText =
-            `Falta ${den - num}/${den} para la unidad`;
+          if (kpiType) kpiType.innerText = "Propia (< 1)";
+          if (kpiComplement) {
+            kpiComplement.innerText = `Falta ${den - num}/${den} para la unidad`;
+          }
         } else if (num === den) {
           $("labelFractionState").innerText = "Unidad Completa (= 1)";
-          $("kpiType").innerText = "Aparente (= 1)";
-          $("kpiComplement").innerText = "Equivale exactamente a 1";
+          if (kpiType) kpiType.innerText = "Aparente (= 1)";
+          if (kpiComplement) kpiComplement.innerText = "Equivale exactamente a 1";
         } else {
           $("labelFractionState").innerText = "Fracción Impropia (> 1)";
-          $("kpiType").innerText = "Impropia (> 1)";
-          $("kpiComplement").innerText =
-            `Mixto: ${Math.floor(num / den)} u. y ${num % den}/${den}`;
+          if (kpiType) kpiType.innerText = "Impropia (> 1)";
+          if (kpiComplement) {
+            kpiComplement.innerText =
+              `Mixto: ${Math.floor(num / den)} u. y ${num % den}/${den}`;
+          }
         }
 
         // Resaltar preajuste activo
@@ -93,33 +99,48 @@ let currentNum = 3;
 
         // 1. Modelo de barra
         const barContainer = $("barContainer");
-        barContainer.innerHTML = "";
-        $("barUnitEndLabel").innerText =
-          num > den
-            ? `${(num / den).toFixed(1)} (Mayor a 1)`
-            : "1.00 (Unidad entera)";
-        for (let i = 0; i < den; i++) {
-          const seg = document.createElement("div");
-          seg.className = "bar__seg" + (i < num ? " is-on" : "");
-          seg.innerText = `1/${den}`;
-          barContainer.appendChild(seg);
+        if (barContainer) {
+          barContainer.innerHTML = "";
+          const barUnitEndLabel = $("barUnitEndLabel");
+          if (barUnitEndLabel) {
+            barUnitEndLabel.innerText =
+              num > den
+                ? `${(num / den).toFixed(1)} (Mayor a 1)`
+                : "1.00 (Unidad entera)";
+          }
+          for (let i = 0; i < den; i++) {
+            const seg = document.createElement("div");
+            seg.className = "bar__seg" + (i < num ? " is-on" : "");
+            seg.innerText = `1/${den}`;
+            barContainer.appendChild(seg);
+          }
+          const barInfo = $("barInfo");
+          if (barInfo) {
+            barInfo.innerText =
+              `${Math.min(num, den)} de ${den} partes sombreadas${num > den ? ` (+${num - den} excedente)` : ""}`;
+          }
         }
-        $("barInfo").innerText =
-          `${Math.min(num, den)} de ${den} partes sombreadas${num > den ? ` (+${num - den} excedente)` : ""}`;
 
         // 2. Disco circular
-        const circumference = 2 * Math.PI * 42;
-        const ratio = Math.min(decimalValue, 1);
         const discArc = $("discArc");
-        discArc.style.strokeDasharray = circumference;
-        discArc.style.strokeDashoffset = circumference * (1 - ratio);
-        const angle = Math.round(ratio * 360);
-        $("discAngle").innerText = `${angle}°`;
-        $("discPercent").innerText = `${percentValue}%`;
-        $("discSectorLabel").innerText =
-          num > den
-            ? `Saturado al 100% (+${(decimalValue - 1).toFixed(2)})`
-            : `Sector de ${angle} grados sexagesimales`;
+        if (discArc) {
+          const circumference = 2 * Math.PI * 42;
+          const ratio = Math.min(decimalValue, 1);
+          discArc.style.strokeDasharray = circumference;
+          discArc.style.strokeDashoffset = circumference * (1 - ratio);
+          const angle = Math.round(ratio * 360);
+          const discAngle = $("discAngle");
+          const discPercent = $("discPercent");
+          const discSectorLabel = $("discSectorLabel");
+          if (discAngle) discAngle.innerText = `${angle}°`;
+          if (discPercent) discPercent.innerText = `${percentValue}%`;
+          if (discSectorLabel) {
+            discSectorLabel.innerText =
+              num > den
+                ? `Saturado al 100% (+${(decimalValue - 1).toFixed(2)})`
+                : `Sector de ${angle} grados sexagesimales`;
+          }
+        }
 
         // 3. Recta numérica
         const linePercent = Math.min(
@@ -139,7 +160,8 @@ let currentNum = 3;
         const div = gcd(num, den);
         const redDen = den / div;
         $("kpiReduced").innerText = `${num / div} / ${redDen}`;
-        $("kpiMcd").innerText = `m.c.d.(${num}, ${den}) = ${div}`;
+        const kpiMcd = $("kpiMcd");
+        if (kpiMcd) kpiMcd.innerText = `m.c.d.(${num}, ${den}) = ${div}`;
 
         // Periodicidad
         let tempDen = redDen;
@@ -147,23 +169,35 @@ let currentNum = 3;
         while (tempDen % 5 === 0) tempDen /= 5;
 
         const badge = $("badgeDecType");
+        const kpiPeriodicity = $("kpiPeriodicity");
         if (tempDen === 1) {
-          badge.innerText = "Decimal Exacto";
-          badge.className = "badge badge--exact lbl-sm";
-          $("kpiPeriodicity").innerText = "Finito (factores 2 y/o 5)";
+          if (badge) {
+            badge.innerText = "Decimal Exacto";
+            badge.className = "badge badge--exact lbl-sm";
+          }
+          if (kpiPeriodicity) kpiPeriodicity.innerText = "Finito (factores 2 y/o 5)";
         } else if (redDen % 2 !== 0 && redDen % 5 !== 0) {
-          badge.innerText = "Periódico Puro";
-          badge.className = "badge badge--pure lbl-sm";
-          $("kpiPeriodicity").innerText = "Infinito con período fijo";
+          if (badge) {
+            badge.innerText = "Periódico Puro";
+            badge.className = "badge badge--pure lbl-sm";
+          }
+          if (kpiPeriodicity) kpiPeriodicity.innerText = "Infinito con período fijo";
         } else {
-          badge.innerText = "Periódico Mixto";
-          badge.className = "badge badge--mixed lbl-sm";
-          $("kpiPeriodicity").innerText = "Tiene anteperíodo y período";
+          if (badge) {
+            badge.innerText = "Periódico Mixto";
+            badge.className = "badge badge--mixed lbl-sm";
+          }
+          if (kpiPeriodicity) kpiPeriodicity.innerText = "Tiene anteperíodo y período";
         }
 
-        $("stepOperation").innerText =
-          `${num} ÷ ${den} = ${decimalValue.toFixed(4).replace(/\.?0+$/, "")}`;
-        updateGaleraStep(num, den, decimalValue);
+        const stepOperation = $("stepOperation");
+        if (stepOperation) {
+          stepOperation.innerText =
+            `${num} ÷ ${den} = ${decimalValue.toFixed(4).replace(/\.?0+$/, "")}`;
+        }
+        if ($("galeraVisualization") && $("stepExplanation")) {
+          updateGaleraStep(num, den, decimalValue);
+        }
       }
 
       function updateGaleraStep(n, d, dec) {
