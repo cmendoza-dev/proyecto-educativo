@@ -187,6 +187,7 @@
     <link rel="stylesheet" href="css/layouts.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/contacto-tutoria.css" />
+    <link rel="stylesheet" href="css/tema-lecciones.css" />
   </head>
 
   <body
@@ -195,6 +196,18 @@
   >
     <!-- ======================= HEADER ======================= -->
     <div data-layout="header"></div>
+
+    <div class="ruta">
+      <a href="index.html">Inicio</a>
+      <span>›</span>
+      <a href="contacto-tutoria.html" aria-current="page"
+        >Contacto y Tutoría</a
+      >
+      <span>›</span>
+      <a href="#math-query-form">Tutoría de Matemáticas</a>
+      <span>›</span>
+      <span class="etiqueta">Secundaria · CNEB</span>
+    </div>
 
     <!-- ======================= MAIN ======================= -->
     <main class="w-full pt-20 bg-surface min-h-[calc(100vh-14rem)]">
@@ -208,17 +221,6 @@
               class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-space-lg"
             >
               <div class="max-w-3xl">
-                <div
-                  class="inline-flex items-center gap-space-xs bg-primary-fixed text-on-primary-fixed px-space-md py-1 rounded-full mb-space-md"
-                >
-                  <span class="material-symbols-outlined text-base"
-                    >support_agent</span
-                  >
-                  <span
-                    class="font-label-sm text-label-sm uppercase tracking-wider font-semibold"
-                    >Tutoría Activa</span
-                  >
-                </div>
                 <h1
                   class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-space-sm"
                 >
@@ -250,7 +252,7 @@
                     >Tiempo de Respuesta</span
                   >
                   <p class="font-headline-sm text-headline-sm text-on-surface">
-                    &lt; 24 horas laborables
+                    &lt; 24 horas
                   </p>
                   <span
                     class="font-body-sm text-body-sm text-secondary font-medium"
@@ -286,14 +288,6 @@
                       Cuéntanos tu duda
                     </h2>
                   </div>
-                  <div
-                    class="hidden sm:flex items-center gap-1 bg-surface-container px-space-sm py-1 rounded-full text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-sm">lock</span>
-                    <span class="font-label-sm text-label-sm"
-                      >Entorno Escolar Seguro</span
-                    >
-                  </div>
                 </div>
 
                 <form
@@ -318,17 +312,19 @@
                         id="role-student"
                         onclick="setRole('student')"
                         type="button"
+                        aria-pressed="true"
                       >
                         <span class="material-symbols-outlined text-base"
                           >face</span
                         >
-                        <span>Soy Estudiante de Secundaria</span>
+                        <span>Soy Estudiante</span>
                       </button>
                       <button
                         class="py-2.5 px-space-md rounded-md font-body-sm text-body-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center justify-center gap-space-xs"
                         id="role-teacher"
                         onclick="setRole('teacher')"
                         type="button"
+                        aria-pressed="false"
                       >
                         <span class="material-symbols-outlined text-base"
                           >person</span
@@ -343,7 +339,7 @@
                     <div>
                       <label
                         class="block font-label-md text-label-md text-on-surface mb-space-xs font-semibold"
-                        >Curso / Nivel Escolar</label
+                        >Grado</label
                       >
                       <div class="relative">
                         <select
@@ -399,52 +395,6 @@
                         class="font-label-md text-label-md text-on-surface font-semibold"
                         >Describe tu duda o en qué paso te has bloqueado</label
                       >
-                      <span class="font-label-sm text-label-sm text-outline"
-                        >Formatos Math admitidos</span
-                      >
-                    </div>
-                    <div
-                      class="flex flex-wrap items-center gap-space-xs mb-space-xs bg-surface-container-low p-space-xs rounded-lg"
-                    >
-                      <span
-                        class="font-label-sm text-label-sm text-on-surface-variant px-space-xs"
-                        >Insertar:</span
-                      >
-                      <button
-                        class="px-space-sm py-1 bg-surface-container-lowest text-primary font-math-inline text-math-inline rounded hover:bg-primary hover:text-on-primary transition-colors shadow-sm"
-                        onclick="insertSnippet('\\frac{a}{b}')"
-                        type="button"
-                      >
-                        a/b
-                      </button>
-                      <button
-                        class="px-space-sm py-1 bg-surface-container-lowest text-primary font-math-inline text-math-inline rounded hover:bg-primary hover:text-on-primary transition-colors shadow-sm"
-                        onclick="insertSnippet('0.\\bar{3}')"
-                        type="button"
-                      >
-                        0.3̂
-                      </button>
-                      <button
-                        class="px-space-sm py-1 bg-surface-container-lowest text-primary font-math-inline text-math-inline rounded hover:bg-primary hover:text-on-primary transition-colors shadow-sm"
-                        onclick="insertSnippet('\\sqrt{x}')"
-                        type="button"
-                      >
-                        √x
-                      </button>
-                      <button
-                        class="px-space-sm py-1 bg-surface-container-lowest text-primary font-math-inline text-math-inline rounded hover:bg-primary hover:text-on-primary transition-colors shadow-sm"
-                        onclick="insertSnippet(' \\cdot 10^n ')"
-                        type="button"
-                      >
-                        ·10ⁿ
-                      </button>
-                      <button
-                        class="px-space-sm py-1 bg-surface-container-lowest text-primary font-math-inline text-math-inline rounded hover:bg-primary hover:text-on-primary transition-colors shadow-sm"
-                        onclick="insertSnippet('( ) / ( )')"
-                        type="button"
-                      >
-                        (···)
-                      </button>
                     </div>
                     <textarea
                       class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md p-space-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all resize-y"
@@ -459,8 +409,7 @@
                   <div>
                     <label
                       class="block font-label-md text-label-md text-on-surface mb-space-xs font-semibold"
-                      >Adjuntar foto del ejercicio resuelto en el
-                      cuaderno</label
+                      >Adjuntar foto del ejercicio resuelto</label
                     >
                     <div
                       class="relative group bg-surface-container-low hover:bg-surface-container-high rounded-xl p-space-lg text-center transition-all cursor-pointer"
@@ -485,12 +434,6 @@
                         >
                           Arrastra aquí una foto o haz clic para subir
                         </p>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant"
-                        >
-                          Recomendado: Captura nítida de tu procedimiento con
-                          lápiz o boli (JPG, PNG o PDF hasta 10 MB)
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -505,8 +448,7 @@
                         >send</span
                       >
                       <span
-                        >Enviar duda a los profesores tutores (Respuesta en &lt;
-                        24h)</span
+                        >Enviar duda a los profesores</span
                       >
                     </button>
                     <p
@@ -516,8 +458,7 @@
                         class="material-symbols-outlined text-sm text-secondary"
                         >verified_user</span
                       >
-                      Tutoría personalizada gratuita vinculada al programa de
-                      refuerzo escolar.
+                      Tutoría personalizada gratuita.
                     </p>
                   </div>
                 </form>
@@ -556,12 +497,12 @@
                   >
                     <span
                       class="font-label-sm text-label-sm uppercase font-bold tracking-wider opacity-90"
-                      >Docente Titular Asignada</span
+                      >Docente Asignado</span
                     >
                     <p
                       class="font-headline-sm text-headline-sm text-on-primary"
                     >
-                      Coordinación de Didáctica
+                      Coordinador Pedagógico
                     </p>
                   </div>
                   <div class="p-space-lg">
@@ -580,7 +521,7 @@
                         <p
                           class="font-body-sm text-body-sm text-secondary font-medium"
                         >
-                          Coordinadora de Matemáticas de Secundaria
+                          Coordinadora de Matemáticas
                         </p>
                         <div
                           class="flex items-center gap-space-xs text-outline mt-1 font-label-sm text-label-sm"
@@ -588,7 +529,7 @@
                           <span class="material-symbols-outlined text-sm"
                             >workspace_premium</span
                           >
-                          <span>15 años de experiencia docente</span>
+                          <span>15 años de experiencia</span>
                         </div>
                       </div>
                     </div>
@@ -607,10 +548,10 @@
                         <span
                           class="w-2.5 h-2.5 rounded-full bg-secondary"
                         ></span>
-                        Docente conectada
+                        En línea
                       </span>
                       <span class="text-outline"
-                        >Horario central: 16:00 - 19:30 (Perú)</span
+                        >Horario: 16:00 - 19:30</span
                       >
                     </div>
                   </div>
@@ -632,7 +573,7 @@
                       <h3
                         class="font-headline-sm text-headline-sm text-on-surface"
                       >
-                        Tutorías Online en Vivo
+                        Tutorías Online
                       </h3>
                       <span
                         class="font-body-sm text-body-sm text-on-surface-variant"
@@ -655,7 +596,7 @@
                       </div>
                       <span
                         class="font-label-md text-label-md text-primary font-bold bg-primary-fixed px-space-sm py-1 rounded"
-                        >17:00 PET</span
+                        >17:00 P.M.</span
                       >
                     </div>
                     <div
@@ -672,7 +613,7 @@
                       </div>
                       <span
                         class="font-label-md text-label-md text-primary font-bold bg-primary-fixed px-space-sm py-1 rounded"
-                        >18:00 PET</span
+                        >18:00 P.M.</span
                       >
                     </div>
                   </div>
@@ -689,7 +630,7 @@
                     <span class="material-symbols-outlined text-base"
                       >calendar_add_on</span
                     >
-                    <span>Añadir a mi calendario escolar</span>
+                    <span>Añadir a mi calendario</span>
                   </a>
                 </div>
 
@@ -754,227 +695,6 @@
           </div>
         </section>
 
-        <!-- Repositorio de recursos -->
-        <section class="w-full bg-surface-container-low py-space-xl">
-          <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
-            <div
-              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl"
-            >
-              <div>
-                <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold"
-                  >Recursos recomendados</span
-                >
-                <h2 class="font-headline-xl text-headline-xl text-on-surface">
-                  Fichas para practicar
-                </h2>
-                <p
-                  class="font-body-md text-body-md text-on-surface-variant mt-1"
-                >
-                  Materiales con licencia abierta para el aula y estudio
-                  autónomo. Con soluciones paso a paso.
-                </p>
-              </div>
-              <div class="flex items-center gap-space-xs">
-                <span
-                  class="font-label-md text-label-md text-on-surface-variant bg-surface-container-lowest px-space-md py-2 rounded-lg shadow-sm flex items-center gap-2"
-                >
-                  <span class="material-symbols-outlined text-primary text-base"
-                    >picture_as_pdf</span
-                  >
-                  2 fichas destacadas
-                </span>
-              </div>
-            </div>
-
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
-            >
-              <!-- Ficha 1 -->
-              <div
-                class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
-              >
-                <div>
-                  <div
-                    class="w-12 h-12 rounded-lg bg-primary-fixed text-primary flex items-center justify-center mb-space-md group-hover:scale-105 transition-transform"
-                  >
-                    <span class="material-symbols-outlined text-2xl"
-                      >pie_chart</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-space-xs mb-space-xs">
-                    <span
-                      class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded"
-                      >1.º y 2.º secundaria</span
-                    >
-                    <span class="text-outline font-label-sm text-label-sm"
-                      >PDF • 2.4 MB</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface mb-space-xs leading-snug"
-                  >
-                    Guía visual de fracciones y decimales en la vida cotidiana
-                  </h3>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
-                  >
-                    Ejemplos con recetas de cocina, descuentos comerciales y
-                    repartos de terreno mediante cuadrículas coloreables.
-                  </p>
-                </div>
-                <button
-                  class="w-full py-2.5 bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary font-headline-sm text-headline-sm rounded-lg transition-colors flex items-center justify-center gap-space-xs"
-                  onclick="downloadAsset('Guia_Visual_Fracciones.pdf')"
-                  type="button"
-                >
-                  <span class="material-symbols-outlined text-base"
-                    >download</span
-                  >
-                  <span>Descargar Ficha</span>
-                </button>
-              </div>
-
-              <!-- Ficha 2 -->
-              <div
-                class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
-              >
-                <div>
-                  <div
-                    class="w-12 h-12 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-space-md group-hover:scale-105 transition-transform"
-                  >
-                    <span class="material-symbols-outlined text-2xl"
-                      >calculate</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-space-xs mb-space-xs">
-                    <span
-                      class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded"
-                      >2.º y 3.º secundaria</span
-                    >
-                    <span class="text-outline font-label-sm text-label-sm"
-                      >PDF • 4.1 MB</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface mb-space-xs leading-snug"
-                  >
-                    100 Ejercicios de operaciones combinadas resueltos
-                  </h3>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
-                  >
-                    Batería progresiva con corchetes, potencias fraccionarias y
-                    conversión previa de periódicos a fracciones.
-                  </p>
-                </div>
-                <button
-                  class="w-full py-2.5 bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary font-headline-sm text-headline-sm rounded-lg transition-colors flex items-center justify-center gap-space-xs"
-                  onclick="downloadAsset('100_Operaciones_Combinadas.pdf')"
-                  type="button"
-                >
-                  <span class="material-symbols-outlined text-base"
-                    >download</span
-                  >
-                  <span>Descargar Ficha</span>
-                </button>
-              </div>
-
-              <!-- Ficha 3 -->
-              <div
-                class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
-              >
-                <div>
-                  <div
-                    class="w-12 h-12 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-space-md group-hover:scale-105 transition-transform"
-                  >
-                    <span class="material-symbols-outlined text-2xl"
-                      >extension</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-space-xs mb-space-xs">
-                    <span
-                      class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded"
-                      >Todos los cursos</span
-                    >
-                    <span class="text-outline font-label-sm text-label-sm"
-                      >PDF • 1.8 MB</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface mb-space-xs leading-snug"
-                  >
-                    Juegos de mesa y recortables: dominó fraccionario
-                  </h3>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
-                  >
-                    28 fichas recortables de dominó donde se empareja el
-                    decimal, la fracción irreductible y el diagrama de tarta.
-                  </p>
-                </div>
-                <button
-                  class="w-full py-2.5 bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary font-headline-sm text-headline-sm rounded-lg transition-colors flex items-center justify-center gap-space-xs"
-                  onclick="downloadAsset('Domino_Fracciones_Recortable.pdf')"
-                  type="button"
-                >
-                  <span class="material-symbols-outlined text-base"
-                    >download</span
-                  >
-                  <span>Descargar Ficha</span>
-                </button>
-              </div>
-
-              <!-- Ficha 4 -->
-              <div
-                class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
-              >
-                <div>
-                  <div
-                    class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center mb-space-md group-hover:scale-105 transition-transform"
-                  >
-                    <span class="material-symbols-outlined text-2xl"
-                      >fact_check</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-space-xs mb-space-xs">
-                    <span
-                      class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded"
-                      >Evaluación</span
-                    >
-                    <span class="text-outline font-label-sm text-label-sm"
-                      >PDF • 850 KB</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface mb-space-xs leading-snug"
-                  >
-                    Rúbrica de autoevaluación para secundaria
-                  </h3>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg"
-                  >
-                    Checklist competencial para que el alumno audite si domina
-                    simplificación, ordenación en la recta y estimación.
-                  </p>
-                </div>
-                <button
-                  class="w-full py-2.5 bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary font-headline-sm text-headline-sm rounded-lg transition-colors flex items-center justify-center gap-space-xs"
-                  onclick="
-                    downloadAsset('Rubrica_Autoevaluacion_Secundaria.pdf')
-                  "
-                  type="button"
-                >
-                  <span class="material-symbols-outlined text-base"
-                    >download</span
-                  >
-                  <span>Descargar Ficha</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <!-- FAQ -->
         <section class="w-full py-space-xl">
           <div class="max-w-[840px] mx-auto px-margin-mobile lg:px-margin">
@@ -1008,7 +728,7 @@
                 >
                   <span
                     class="font-headline-sm text-headline-sm text-on-surface"
-                    >¿Por qué 0.999... es exactamente igual a 1?</span
+                    >¿Cómo se suman fracciones con distinto denominador?</span
                   >
                   <span
                     class="material-symbols-outlined text-outline transition-transform duration-200"
@@ -1021,34 +741,28 @@
                   id="faq-content-1"
                 >
                   <p>
-                    Aunque parece contraintuitivo, es una igualdad matemática
-                    exacta. Existen varias demostraciones accesibles para
-                    secundaria:
+                    Primero buscamos un denominador común, normalmente usando
+                    el mínimo común múltiplo de los denominadores. Después
+                    convertimos las fracciones equivalentes y sumamos los
+                    numeradores:
                   </p>
                   <div
                     class="bg-surface-container-low p-space-md rounded-lg font-math-inline text-math-inline text-on-surface space-y-1"
                   >
-                    <p>1. Sea <span class="font-bold">x = 0.999...</span></p>
+                    <p>1. Calcula el mínimo común múltiplo de los denominadores.</p>
                     <p>
-                      2. Multiplicamos por 10:
-                      <span class="font-bold">10x = 9.999...</span>
+                      2. Convierte cada fracción a una equivalente con ese
+                      denominador.
                     </p>
                     <p>
-                      3. Restamos la primera ecuación:
-                      <span class="font-bold"
-                        >10x - x = 9.999... - 0.999...</span
-                      >
+                      3. Suma los numeradores y conserva el denominador común.
                     </p>
                     <p>
-                      4. Resulta:
-                      <span class="font-bold">9x = 9 ⇒ x = 9/9 = 1</span>
+                      4. Simplifica el resultado si es posible.
                     </p>
                   </div>
                   <p class="font-body-sm text-body-sm text-outline">
-                    Además, entre dos números reales distintos siempre debe
-                    existir otro número intermedio. No es posible colocar ningún
-                    número entre 0.999... y 1, por lo que representan el mismo
-                    punto en la recta real.
+                    Por ejemplo: 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.
                   </p>
                 </div>
               </div>
@@ -1064,8 +778,7 @@
                 >
                   <span
                     class="font-headline-sm text-headline-sm text-on-surface"
-                    >¿Cómo sé si un decimal infinito se puede convertir en
-                    fracción?</span
+                    >¿Cómo se multiplican y dividen las fracciones?</span
                   >
                   <span
                     class="material-symbols-outlined text-outline transition-transform duration-200"
@@ -1078,28 +791,22 @@
                   id="faq-content-2"
                 >
                   <p>
-                    Depende de si las cifras decimales siguen un patrón
-                    repetitivo (periódico) o no:
+                    Para multiplicar fracciones, multiplica los numeradores
+                    entre sí y los denominadores entre sí. Para dividir, deja
+                    la primera fracción igual y multiplícala por la fracción
+                    inversa de la segunda:
                   </p>
                   <ul
                     class="list-disc pl-5 space-y-1 font-body-sm text-body-sm"
                   >
                     <li>
-                      <strong class="text-on-surface"
-                        >Sí se puede (Número Racional ℚ):</strong
-                      >
-                      Si es un decimal exacto (ej. 0.25) o periódico puro/mixto
-                      (ej. 0.333... o 1.4555...). Toda repetición periódica
-                      tiene fracción generatriz.
+                      <strong class="text-on-surface">Multiplicación:</strong>
+                      2/3 × 4/5 = (2 × 4)/(3 × 5) = 8/15.
                     </li>
                     <li>
-                      <strong class="text-on-surface"
-                        >No se puede (Número Irracional 𝕀):</strong
-                      >
-                      Si tiene infinitas cifras decimales sin repetición
-                      periódica regular, como π (3.14159...) o √2 (1.41421...).
-                      Estos no pueden escribirse como el cociente de dos números
-                      enteros.
+                      <strong class="text-on-surface">División:</strong>
+                      2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6. Recuerda
+                      simplificar la fracción final.
                     </li>
                   </ul>
                 </div>
@@ -1116,8 +823,7 @@
                 >
                   <span
                     class="font-headline-sm text-headline-sm text-on-surface"
-                    >¿Puedo usar esta plataforma en la pizarra digital de mi
-                    aula?</span
+                    >¿Cómo se comparan dos fracciones?</span
                   >
                   <span
                     class="material-symbols-outlined text-outline transition-transform duration-200"
@@ -1130,15 +836,13 @@
                   id="faq-content-3"
                 >
                   <p>
-                    ¡Absolutamente! Toda la plataforma está optimizada para
-                    pantallas táctiles interactivas (Promethean, SMART Board,
-                    ViewSonic) y proyectores HDMI.
+                    Puedes compararlas convirtiéndolas a un denominador común
+                    o usando la multiplicación cruzada. Si a/b y c/d tienen
+                    denominadores positivos, compara a × d con c × b.
                   </p>
                   <p class="font-body-sm text-body-sm text-outline">
-                    Recomendamos activar el modo "Pantalla Completa" (tecla F11)
-                    en el navegador del centro. Los deslizadores de fracciones y
-                    tiras numéricas admiten hasta 2 toques simultáneos para que
-                    dos alumnos participen juntos en la pizarra.
+                    Por ejemplo, para comparar 3/4 y 5/8: 3 × 8 = 24 y 5 × 4
+                    = 20; por tanto, 3/4 es mayor que 5/8.
                   </p>
                 </div>
               </div>
@@ -1153,11 +857,15 @@
             const teacherBtn = document.getElementById("role-teacher");
 
             if (role === "student") {
+              studentBtn.setAttribute("aria-pressed", "true");
+              teacherBtn.setAttribute("aria-pressed", "false");
               studentBtn.className =
                 "py-2.5 px-space-md rounded-md font-body-sm text-body-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center justify-center gap-space-xs";
               teacherBtn.className =
                 "py-2.5 px-space-md rounded-md font-body-sm text-body-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center justify-center gap-space-xs";
             } else {
+              teacherBtn.setAttribute("aria-pressed", "true");
+              studentBtn.setAttribute("aria-pressed", "false");
               teacherBtn.className =
                 "py-2.5 px-space-md rounded-md font-body-sm text-body-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm flex items-center justify-center gap-space-xs";
               studentBtn.className =

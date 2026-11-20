@@ -19,20 +19,25 @@
     <link rel="stylesheet" href="css/laboratorio-interactivo.css" />
       <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/layouts.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/tema-lecciones.css">
 </head>
   <body data-page="laboratorio-interactivo">
     <div data-layout="header"></div>
+
+    <div class="ruta">
+      <a href="index.html">Inicio</a>
+      <span>›</span>
+      <a href="laboratorio-interactivo.html" aria-current="page"
+        >Laboratorio Interactivo</a
+      >
+    </div>
 
     <main class="main">
       <div class="container">
         <!-- Encabezado y selector de modo -->
         <div class="page-head">
           <div>
-            <div class="eyebrow lbl-sm upper">
-              <span class="material-symbols-outlined">science</span>
-              <span>Explora · Comprueba · Aprende</span>
-            </div>
             <h1 class="page-title h-lg">
               Laboratorio de fracciones y decimales
             </h1>
@@ -118,6 +123,7 @@
                   <div class="stepper__ctrl">
                     <button
                       class="icon-btn"
+                      style="display: inline-flex; align-items: center; justify-content: center;"
                       aria-label="Disminuir numerador"
                       onclick="adjustValue('num', -1)"
                       type="button"
@@ -131,6 +137,7 @@
                     >
                     <button
                       class="icon-btn"
+                      style="display: inline-flex; align-items: center; justify-content: center;"
                       aria-label="Aumentar numerador"
                       onclick="adjustValue('num', 1)"
                       type="button"
@@ -162,6 +169,7 @@
                   <div class="stepper__ctrl">
                     <button
                       class="icon-btn"
+                      style="display: inline-flex; align-items: center; justify-content: center;"
                       aria-label="Disminuir denominador"
                       onclick="adjustValue('den', -1)"
                       type="button"
@@ -175,6 +183,7 @@
                     >
                     <button
                       class="icon-btn"
+                      style="display: inline-flex; align-items: center; justify-content: center;"
                       aria-label="Aumentar denominador"
                       onclick="adjustValue('den', 1)"
                       type="button"
@@ -199,70 +208,7 @@
             </div>
 
             <div class="viz">
-              <!-- Modelo de barra -->
-              <div class="viz-card">
-                <div class="viz-card__head">
-                  <span class="viz-card__title lbl-md"
-                    ><span class="material-symbols-outlined c-primary"
-                      >view_column</span
-                    ><span>Modelo de Barra (Unidad Rectangular)</span></span
-                  >
-                  <span class="lbl-sm c-muted fw-6" id="barInfo"
-                    >3 de 4 partes sombreadas</span
-                  >
-                </div>
-                <div class="bar" id="barContainer"></div>
-                <div class="bar__scale lbl-sm">
-                  <span>0.00 (Inicio)</span
-                  ><span id="barUnitEndLabel">1.00 (Unidad entera)</span>
-                </div>
-              </div>
-
-              <div class="viz-row">
-                <!-- Disco circular -->
-                <div class="viz-card viz-card--disc">
-                  <span class="viz-card__title lbl-md"
-                    ><span class="material-symbols-outlined c-secondary"
-                      >pie_chart</span
-                    ><span>Disco Circular</span></span
-                  >
-                  <div class="disc">
-                    <svg class="disc__svg" viewBox="0 0 100 100">
-                      <circle
-                        class="disc__track"
-                        cx="50"
-                        cy="50"
-                        r="42"
-                        fill="transparent"
-                        stroke="currentColor"
-                        stroke-width="16"
-                      ></circle>
-                      <circle
-                        class="disc__arc"
-                        id="discArc"
-                        cx="50"
-                        cy="50"
-                        r="42"
-                        fill="transparent"
-                        stroke="currentColor"
-                        stroke-width="16"
-                        stroke-linecap="round"
-                        stroke-dasharray="263.89"
-                        stroke-dashoffset="65.97"
-                      ></circle>
-                    </svg>
-                    <div class="disc__center">
-                      <span class="disc__angle" id="discAngle">270°</span>
-                      <span class="disc__percent lbl-sm" id="discPercent"
-                        >75.0%</span
-                      >
-                    </div>
-                  </div>
-                  <span class="lbl-sm c-outline" id="discSectorLabel"
-                    >Sector de 270 grados sexagesimales</span
-                  >
-                </div>
-
+              <div>
                 <!-- Recta numérica -->
                 <div class="viz-card viz-card--line">
                   <div class="viz-card__head">
@@ -320,11 +266,8 @@
               <div class="card__head">
                 <h2 class="card__title h-sm">
                   <span class="material-symbols-outlined">analytics</span
-                  ><span>Panel de Resultados en Vivo</span>
+                  ><span>Panel de Resultados</span>
                 </h2>
-                <span class="badge badge--exact lbl-sm" id="badgeDecType"
-                  >Decimal Exacto</span
-                >
               </div>
 
               <div class="kpis">
@@ -333,62 +276,20 @@
                   <span class="kpi__value math-d c-primary" id="kpiDecimal"
                     >0.75</span
                   >
-                  <span class="body-sm c-muted" id="kpiPeriodicity"
-                    >Finito (factores 2 y/o 5)</span
-                  >
                 </div>
                 <div class="kpi">
                   <span class="lbl-sm c-outline">Equivalencia Porcentual</span>
                   <span class="kpi__value math-d c-secondary" id="kpiPercentage"
                     >75.0%</span
                   >
-                  <span class="body-sm c-muted">Base 100 centésimas</span>
                 </div>
                 <div class="kpi">
-                  <span class="lbl-sm c-outline">Fracción Irreducible</span>
+                  <span class="lbl-sm c-outline">Fracción</span>
                   <span class="kpi__value math-d c-surface" id="kpiReduced"
                     >3 / 4</span
-                  >
-                  <span class="body-sm c-muted" id="kpiMcd"
-                    >m.c.d.(3, 4) = 1</span
-                  >
-                </div>
-                <div class="kpi">
-                  <span class="lbl-sm c-outline">Clasificación Aritmética</span>
-                  <span class="kpi__value lbl-lg c-surface fw-6" id="kpiType"
-                    >Propia (&lt; 1)</span
-                  >
-                  <span class="body-sm c-muted" id="kpiComplement"
-                    >Falta 1/4 para la unidad</span
-                  >
-                </div>
-              </div>
-
-              <div class="soft galera">
-                <div class="galera__head">
-                  <span class="galera__title lbl-md"
-                    ><span class="material-symbols-outlined"
-                      >format_list_numbered</span
-                    ><span>División paso a paso</span></span
-                  >
-                  <button
-                    class="link-btn lbl-sm"
-                    onclick="toggleStepDetails()"
-                    type="button"
-                  >
-                    <span id="toggleText">Ocultar pasos</span>
-                    <span class="material-symbols-outlined" id="toggleIcon"
-                      >expand_less</span
                     >
-                  </button>
+
                 </div>
-                <div class="galera__box math-i">
-                  <div class="galera__op">
-                    <span id="stepOperation">3 ÷ 4 = 0.75</span>
-                  </div>
-                  <div class="galera__pre" id="galeraVisualization"></div>
-                </div>
-                <div class="galera__explain body-sm" id="stepExplanation"></div>
               </div>
             </div>
 
@@ -412,7 +313,7 @@
             <div class="quiz-head__right">
               <div class="streak lbl-md">
                 <span>🔥 Racha:</span><span id="quizStreak">5</span
-                ><span class="streak__sub">aciertos seguidos</span>
+                >
               </div>
               <div class="counter lbl-sm">
                 Reto #<span id="quizIndex">1</span> de 5
@@ -567,10 +468,6 @@
                   Resultado: 4/3
                 </div>
               </div>
-              <div class="tool__foot lbl-sm">
-                <span class="material-symbols-outlined">verified_user</span
-                ><span>Aplica método de potencias de 10</span>
-              </div>
             </div>
 
             <div class="card tool">
@@ -609,10 +506,6 @@
                   Irreducible: 3/4 (mcd: 16)
                 </div>
               </div>
-              <div class="tool__foot lbl-sm">
-                <span class="material-symbols-outlined">calculate</span
-                ><span>Algoritmo euclidiano directo</span>
-              </div>
             </div>
 
             <div class="card tool">
@@ -650,10 +543,6 @@
                 <div class="tool__result lbl-sm c-primary" id="compResult">
                   3/5 (0.6) &lt; 2/3 (0.66...)
                 </div>
-              </div>
-              <div class="tool__foot lbl-sm">
-                <span class="material-symbols-outlined">balance</span
-                ><span>Comprobación con producto en aspas</span>
               </div>
             </div>
           </div>

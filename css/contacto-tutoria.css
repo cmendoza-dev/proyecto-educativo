@@ -1,24 +1,25 @@
 :root {
-  --contact-night: #10152b;
-  --contact-ink: #17213d;
-  --contact-muted: #64728b;
-  --contact-line: #e3e9f4;
-  --contact-paper: #fff;
-  --contact-lime: #d7ff63;
-  --contact-blue: #7c8cff;
-  --contact-coral: #ff6b7a;
-  --contact-teal: #32d5c7;
-  --contact-canvas: #f5f7ff;
+  --contact-night: var(--fd-night);
+  --contact-ink: var(--fd-ink);
+  --contact-muted: var(--fd-muted);
+  --contact-line: var(--fd-line);
+  --contact-paper: var(--fd-paper);
+  --contact-lime: var(--fd-lime);
+  --contact-blue: var(--fd-blue);
+  --contact-coral: var(--fd-coral);
+  --contact-teal: var(--fd-teal);
+  --contact-canvas: var(--fd-canvas);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: var(--contact-ink) !important;
   background:
-    linear-gradient(rgba(124,140,255,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,140,255,.05) 1px, transparent 1px),
-    radial-gradient(circle at 8% 12%, rgba(124,140,255,.18), transparent 22rem),
+    radial-gradient(circle at 12% 6%, rgba(125, 140, 255, 0.19), transparent 25rem),
+    radial-gradient(circle at 90% 20%, rgba(53, 212, 195, 0.08), transparent 21rem),
     var(--contact-night) !important;
   font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif !important;
 }
@@ -29,8 +30,13 @@ main {
   background: transparent !important;
 }
 
+.container {
+  width: min(100% - 32px, 1280px) !important;
+  margin-inline: auto;
+}
+
 main > div > section:first-child {
-  padding: 55px 0 72px !important;
+  padding: 58px 0 54px !important;
   color: #fff !important;
   background: transparent !important;
 }
@@ -42,36 +48,41 @@ main > div > section:first-child > div {
 main > div > section:first-child h1 {
   max-width: 760px;
   color: #fff !important;
-  font-size: clamp(2.35rem, 5vw, 4.5rem) !important;
+  font-size: clamp(2.5rem, 5vw, 4.75rem) !important;
   font-weight: 850 !important;
-  letter-spacing: -.065em;
-  line-height: 1 !important;
+  letter-spacing: -0.06em;
+  line-height: 1.02 !important;
+  text-wrap: balance;
 }
 
 main > div > section:first-child p {
   max-width: 650px;
-  color: rgba(255,255,255,.7) !important;
-  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: 1.08rem !important;
   line-height: 1.65 !important;
 }
 
 main > div > section:first-child .inline-flex {
   color: var(--contact-night) !important;
   background: var(--contact-lime) !important;
+  border: 0;
   font-family: "JetBrains Mono", monospace;
+  box-shadow: 0 8px 24px rgba(217, 255, 100, 0.12);
 }
 
 main > div > section:first-child > div > div > div:last-child {
-  border: 1px solid rgba(255,255,255,.18);
+  min-width: 290px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   color: #fff;
-  background: rgba(255,255,255,.08);
-  box-shadow: none;
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 44px rgba(6, 9, 24, 0.22);
+  backdrop-filter: blur(16px);
+  border-radius: 18px;
 }
 
 main > div > section:first-child > div > div > div:last-child p {
   color: #fff !important;
-  font-size: .95rem !important;
+  font-size: 1rem !important;
 }
 
 main > div > section:first-child > div > div > div:last-child span:last-child {
@@ -79,35 +90,37 @@ main > div > section:first-child > div > div > div:last-child span:last-child {
 }
 
 main > div > section:nth-child(2) {
-  padding: 0 0 46px !important;
+  position: relative;
+  padding: 0 0 48px !important;
   background: transparent !important;
 }
 
 main > div > section:nth-child(2) > div > div {
   align-items: stretch;
+  gap: 20px;
 }
 
 main > div > section:nth-child(2) > div > div > div:first-child {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--contact-line);
-  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
   background: var(--contact-paper);
-  box-shadow: 0 24px 60px rgba(0,0,0,.24);
+  box-shadow: 0 28px 70px rgba(5, 9, 30, 0.28);
 }
 
 main > div > section:nth-child(2) > div > div > div:first-child::before {
   position: absolute;
-  inset: 0 20% auto;
-  height: 3px;
-  background: linear-gradient(90deg, var(--contact-lime), var(--contact-blue), var(--contact-teal));
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--contact-lime), var(--contact-blue) 55%, var(--contact-teal));
   content: "";
 }
 
 main > div > section:nth-child(2) h2 {
   color: var(--contact-night) !important;
-  font-size: 1.6rem !important;
-  letter-spacing: -.04em;
+  font-size: 1.65rem !important;
+  letter-spacing: -0.035em;
 }
 
 main > div > section:nth-child(2) label {
@@ -116,18 +129,39 @@ main > div > section:nth-child(2) label {
 
 #role-student,
 #role-teacher {
+  min-height: 48px;
+  border: 1px solid transparent;
   border-radius: 11px !important;
-  transition: .2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 #role-student {
   color: var(--contact-night) !important;
   background: var(--contact-lime) !important;
+  border-color: rgba(130, 153, 37, 0.28);
+  box-shadow: 0 7px 18px rgba(130, 153, 37, 0.14);
 }
 
 #role-teacher {
   color: var(--contact-muted) !important;
-  background: #f0f3ff !important;
+  background: #f1f4fb !important;
+  border-color: transparent;
+}
+
+#role-student:not(.bg-primary-container),
+#role-teacher:not(.bg-primary-container) {
+  color: var(--contact-muted) !important;
+  background: #f1f4fb !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#role-student.bg-primary-container,
+#role-teacher.bg-primary-container {
+  color: var(--contact-night) !important;
+  background: var(--contact-lime) !important;
+  border-color: rgba(130, 153, 37, 0.28);
+  box-shadow: 0 7px 18px rgba(130, 153, 37, 0.14);
 }
 
 #role-student:hover,
@@ -141,7 +175,13 @@ main textarea {
   border: 1px solid var(--contact-line) !important;
   color: var(--contact-ink) !important;
   background: #f8f9ff !important;
-  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+main input:not([type="file"]):hover,
+main select:hover,
+main textarea:hover {
+  border-color: #c7cfdf !important;
 }
 
 main input:not([type="file"]):focus,
@@ -150,52 +190,68 @@ main textarea:focus {
   border-color: var(--contact-blue) !important;
   outline: 0 !important;
   background: #fff !important;
-  box-shadow: 0 0 0 4px rgba(124,140,255,.14) !important;
+  box-shadow: 0 0 0 4px rgba(125, 140, 255, 0.14) !important;
 }
 
-#query-textarea { min-height: 150px; }
-
-main button {
-  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+#query-textarea {
+  min-height: 150px;
+  line-height: 1.65;
 }
 
-main button:hover {
+main > div > section:nth-child(2) div.group {
+  border: 1.5px dashed #cbd3e7;
+  background:
+    linear-gradient(135deg, rgba(125, 140, 255, 0.05), rgba(53, 212, 195, 0.04)),
+    #f8f9ff;
+}
+
+main > div > section:nth-child(2) div.group:hover {
+  border-color: var(--contact-blue);
+  background: #f4f6ff;
+}
+
+main button,
+main a {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease !important;
+}
+
+main button:hover,
+main a:hover {
   transform: translateY(-2px);
 }
 
 main > div > section:nth-child(2) button[type="submit"] {
+  min-height: 58px;
   color: var(--contact-night) !important;
   background: var(--contact-lime) !important;
-  box-shadow: 0 10px 24px rgba(16,21,43,.13);
+  box-shadow: 0 12px 26px rgba(217, 255, 100, 0.16);
 }
 
 main > div > section:nth-child(2) button[type="submit"]:hover {
-  box-shadow: 0 14px 28px rgba(16,21,43,.2);
+  box-shadow: 0 16px 32px rgba(217, 255, 100, 0.24);
 }
 
 main > div > section:nth-child(2) > div > div > div:last-child {
   display: grid;
+  align-content: start;
   gap: 14px;
 }
 
 main > div > section:nth-child(2) > div > div > div:last-child > div {
-  border: 1px solid var(--contact-line);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 19px;
   background: var(--contact-paper);
-  box-shadow: 0 12px 30px rgba(0,0,0,.14);
+  box-shadow: 0 14px 34px rgba(5, 9, 30, 0.18);
 }
 
 main > div > section:nth-child(2) > div > div > div:last-child > div:first-child {
-  border-color: rgba(50,213,199,.35);
-  background: linear-gradient(135deg, #e8fffb, #f8fff0);
+  border-color: rgba(53, 212, 195, 0.34);
+  background: linear-gradient(135deg, #edfffb, #fbfff1);
 }
 
 main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2) {
-  background: var(--contact-night);
-}
-
-main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(3) {
-  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, #171d38, #20284a);
 }
 
 main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2) h3,
@@ -204,36 +260,42 @@ main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2
 }
 
 main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2) p {
-  color: rgba(255,255,255,.65) !important;
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+main > div > section:nth-child(3),
+main > div > section:nth-child(4) {
+  position: relative;
+  background: transparent !important;
 }
 
 main > div > section:nth-child(3) {
-  padding: 64px 0 !important;
-  background: transparent !important;
+  margin-bottom: 44px;
+  padding: 56px 0 58px !important;
+  background:
+    linear-gradient(180deg, rgba(246, 248, 255, 0.98), rgba(246, 248, 255, 0.94)) !important;
+  border-block: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 main > div > section:nth-child(3) h2,
 main > div > section:nth-child(4) h2 {
-  color: #fff !important;
-  font-size: clamp(1.7rem, 3vw, 2.4rem) !important;
-  letter-spacing: -.045em;
+  color: var(--contact-night) !important;
+  font-size: clamp(1.75rem, 3vw, 2.45rem) !important;
+  letter-spacing: -0.045em;
 }
 
 main > div > section:nth-child(3) > div > div > div {
   border: 1px solid var(--contact-line);
-  border-radius: 19px;
+  border-radius: 18px;
   background: #fff;
-  box-shadow: 0 12px 30px rgba(43,58,104,.09);
-  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 12px 30px rgba(43, 58, 104, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 main > div > section:nth-child(3) > div > div > div:hover {
-  box-shadow: 0 18px 34px rgba(43,58,104,.15);
+  border-color: #cbd3e8;
+  box-shadow: 0 18px 38px rgba(43, 58, 104, 0.14);
   transform: translateY(-5px);
-}
-
-main > div > section:nth-child(3) > div > div:last-child > div:nth-child(n + 3) {
-  display: none;
 }
 
 main > div > section:nth-child(3) button {
@@ -242,53 +304,170 @@ main > div > section:nth-child(3) button {
 }
 
 main > div > section:nth-child(3) button:hover {
-  color: var(--contact-night) !important;
   background: var(--contact-lime) !important;
 }
 
 main > div > section:nth-child(4) {
-  padding: 64px 0 !important;
+  padding: 20px 0 24px !important;
+  color: var(--contact-ink);
   background: transparent !important;
 }
 
 main > div > section:nth-child(4) > div > div:last-child > div {
   border: 1px solid var(--contact-line);
-  border-radius: 17px;
+  border-radius: 16px;
   background: #fff;
-  box-shadow: 0 10px 25px rgba(43,58,104,.07);
-  transition: box-shadow .2s ease, transform .2s ease;
+  box-shadow: 0 10px 25px rgba(43, 58, 104, 0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 main > div > section:nth-child(4) > div > div:last-child > div:hover {
-  box-shadow: 0 15px 28px rgba(43,58,104,.12);
+  box-shadow: 0 15px 30px rgba(43, 58, 104, 0.13);
   transform: translateY(-2px);
 }
 
-main > div > section:nth-child(4) button {
-  color: var(--contact-ink) !important;
+main > div > section:nth-child(4) > div > div:first-child h2,
+main > div > section:nth-child(4) > div > div:first-child p {
+  color: #fff;
 }
 
-main > div > section:nth-child(4) button:focus-visible,
 main button:focus-visible,
 main a:focus-visible,
 main select:focus-visible,
-main textarea:focus-visible {
+main textarea:focus-visible,
+main input:focus-visible {
   outline: 3px solid var(--contact-coral) !important;
   outline-offset: 3px;
 }
 
+@media (max-width: 1023px) {
+  main > div > section:nth-child(2) > div > div > div:last-child {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
-  .container { width: min(100% - 32px, 620px) !important; }
-  main > div > section:first-child { padding-top: 32px !important; }
-  main > div > section:first-child h1 { font-size: 2.55rem !important; }
-  main > div > section:nth-child(2) > div > div > div:first-child { padding: 22px !important; }
+  .container {
+    width: min(100% - 32px, 620px) !important;
+  }
+
+  main {
+    padding-bottom: 40px !important;
+  }
+
+  main > div > section:first-child {
+    padding: 36px 0 38px !important;
+  }
+
+  main > div > section:first-child h1 {
+    font-size: 2.55rem !important;
+  }
+
+  main > div > section:first-child > div > div > div:last-child {
+    min-width: 0;
+  }
+
+  main > div > section:nth-child(2) > div > div > div:first-child {
+    padding: 22px !important;
+  }
+
+  main > div > section:nth-child(2) > div > div > div:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  main > div > section:nth-child(3) {
+    margin-bottom: 24px;
+    padding: 42px 0 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
+}
+
+/* Sistema visual compartido con lecciones y laboratorio */
+body {
+  background: #f3f5f9 !important;
+  background-image: none !important;
+}
+
+main {
+  color: var(--fd-ink);
+}
+
+main > div > section:first-child {
+  background: #f3f5f9 !important;
+}
+
+main > div > section:first-child h1 {
+  color: var(--fd-night) !important;
+  font-size: clamp(2.2rem, 4vw, 3.8rem) !important;
+  letter-spacing: -.055em;
+}
+
+main > div > section:first-child p {
+  color: var(--fd-muted) !important;
+}
+
+main > div > section:first-child .inline-flex {
+  color: var(--fd-night) !important;
+  background: var(--fd-lime) !important;
+}
+
+main > div > section:first-child > div > div > div:last-child {
+  border-color: #dde4ef;
+  color: var(--fd-ink);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(43, 58, 104, .08);
+}
+
+main > div > section:first-child > div > div > div:last-child p {
+  color: var(--fd-ink) !important;
+}
+
+main > div > section:first-child > div > div > div:last-child span:last-child {
+  color: #5366db;
+}
+
+main > div > section:nth-child(2) > div > div > div:first-child,
+main > div > section:nth-child(2) > div > div > div:last-child > div,
+main > div > section:nth-child(3) > div > div > div,
+main > div > section:nth-child(4) > div > div:last-child > div {
+  border-color: #dde4ef;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(43, 58, 104, .08);
+}
+
+main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2) {
+  color: var(--fd-ink);
+  background: #f8f9fc;
+}
+
+main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2) h3 {
+  color: var(--fd-night) !important;
+}
+
+main > div > section:nth-child(2) > div > div > div:last-child > div:nth-child(2) p {
+  color: var(--fd-muted) !important;
+}
+
+main > div > section:nth-child(3) {
+  background: #f3f5f9 !important;
+  border-block-color: #e2e6ef;
+}
+
+main > div > section:nth-child(3) h2,
+main > div > section:nth-child(4) h2 {
+  color: var(--fd-night) !important;
+}
+
+main > div > section:nth-child(4) > div > div:first-child h2,
+main > div > section:nth-child(4) > div > div:first-child p {
+  color: var(--fd-ink) !important;
 }

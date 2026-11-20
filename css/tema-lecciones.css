@@ -1,0 +1,235 @@
+/*
+ * Lenguaje visual compartido por las páginas de aprendizaje.
+ * Se carga después de los estilos específicos para mantener la misma jerarquía.
+ */
+
+body {
+  color: var(--fd-ink) !important;
+  background: #f3f5f9 !important;
+  background-image: none !important;
+}
+
+.cabecera + main {
+  padding-top: 5rem;
+}
+
+.eyebrow {
+  color: #5366db;
+}
+
+button,
+a {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease,
+    color .2s ease,
+    border-color .2s ease;
+}
+
+button:hover,
+a:hover {
+  transform: translateY(-2px);
+}
+
+/* Breadcrumb de Lecciones Teóricas */
+.ruta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  width: min(1180px, calc(100% - 48px));
+  min-height: 64px;
+  margin: 0 auto;
+  padding: 20px 0 14px;
+  color: #7d8798;
+  border-bottom: 1px solid #e2e6ef;
+  font-size: .78rem;
+}
+
+.ruta a {
+  color: #67748a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ruta > span:not(.etiqueta) {
+  color: #9293a9;
+  font-size: 20px;
+}
+
+.ruta a[aria-current="page"] {
+  color: #2f55a7;
+}
+
+.ruta .etiqueta {
+  padding: 7px 10px;
+  color: #596780;
+  background: #fff;
+  border: 1px solid #dde4ef;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(43, 58, 104, .05);
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+/* Encabezados y superficies */
+.page-head,
+.evaluacion-hero {
+  padding-top: 18px;
+  padding-bottom: 26px;
+}
+
+.page-title,
+.evaluacion-hero h1 {
+  color: var(--fd-night) !important;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  letter-spacing: -.055em;
+  line-height: 1.04;
+}
+
+.page-lead,
+.hero-copy {
+  color: var(--fd-muted) !important;
+}
+
+.mode {
+  color: #596780;
+  background: #fff;
+  border-color: #d9dfec;
+  box-shadow: 0 4px 14px rgba(43, 58, 104, .06);
+}
+
+.mode:hover,
+.mode.is-active {
+  color: #fff;
+  background: #5366db;
+  border-color: #5366db;
+}
+
+.card,
+.pregunta-examen,
+.mapa-cuestionario,
+.recordatorio-operativo,
+.racha-aciertos,
+.rendimiento,
+.estado-evaluacion {
+  border: 1px solid #dde4ef;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(43, 58, 104, .08);
+}
+
+.card {
+  background: #fff;
+}
+
+.estado-evaluacion {
+  color: var(--fd-ink);
+  background: #fff;
+}
+
+.estado-evaluacion span:last-child {
+  color: #5366db;
+}
+
+/* Herramientas, tarjetas y formularios */
+.preset,
+.boton-secundario {
+  color: #5366db;
+  background: #fff;
+  border-color: #dce2ee;
+}
+
+.preset:hover,
+.preset.is-active,
+.boton-principal {
+  color: #fff;
+  background: #5366db;
+  border-color: #5366db;
+}
+
+.viz-card,
+.option,
+.opcion,
+.dominios > div {
+  border-color: #e4e8f1;
+  background: #fff;
+}
+
+.viz-card:hover,
+.option:hover,
+.option.is-selected,
+.opcion:hover {
+  border-color: #5366db;
+  background: #f4f6ff;
+}
+
+.formulario-respuestas textarea,
+textarea {
+  border-color: #dce3ef;
+  background: #f8f9fc;
+}
+
+.formulario-respuestas textarea:focus,
+textarea:focus {
+  border-color: #5366db;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(83, 102, 219, .12);
+}
+
+/* Contacto y tutoría conserva sus funciones, pero usa las mismas superficies. */
+main > div > section:first-child {
+  background: #f3f5f9 !important;
+}
+
+main > div > section:first-child h1 {
+  color: var(--fd-night) !important;
+}
+
+main > div > section:first-child p {
+  color: var(--fd-muted) !important;
+}
+
+main > div > section:first-child > div > div > div:last-child,
+main > div > section:nth-child(2) > div > div > div:first-child,
+main > div > section:nth-child(2) > div > div > div:last-child > div,
+main > div > section:nth-child(3) > div > div > div,
+main > div > section:nth-child(4) > div > div:last-child > div {
+  border-color: #dde4ef;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(43, 58, 104, .08);
+}
+
+main > div > section:first-child > div > div > div:last-child {
+  color: var(--fd-ink);
+  background: #fff;
+}
+
+main > div > section:first-child > div > div > div:last-child p {
+  color: var(--fd-ink) !important;
+}
+
+main > div > section:nth-child(3) {
+  background: #f3f5f9 !important;
+  border-block-color: #e2e6ef;
+}
+
+main > div > section:nth-child(3) h2,
+main > div > section:nth-child(4) h2,
+main > div > section:nth-child(4) > div > div:first-child h2,
+main > div > section:nth-child(4) > div > div:first-child p {
+  color: var(--fd-night) !important;
+}
+
+@media (max-width: 760px) {
+  .ruta {
+    width: min(100% - 32px, 620px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  a {
+    transition-duration: .01ms;
+  }
+}

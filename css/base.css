@@ -65,3 +65,33 @@ textarea {
   color: var(--fd-night);
   background: var(--fd-lime);
 }
+
+/* ===== RUTA DE NAVEGACIÓN ===== */
+.ruta {
+  min-height: 55px;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid #eeeefa;
+}
+.ruta a {
+  color: #5d5d72;
+  font-size: 14px;
+}
+.ruta a:hover {
+  color: var(--violeta);
+}
+.ruta > span:not(.etiqueta) {
+  color: #9293a9;
+  font-size: 20px;
+}
+.etiqueta {
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #e2e7ff;
+  color: var(--violeta);
+  font-family: monospace;
+  font-size: 12px;
+}
